@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AppStore</name>
+    </assembly>
+    <members>
+        <member name="T:AppStore.Controllers.AppStoreController">
+            <summary>
+            AppStore контроллер
+            </summary>
+        </member>
+        <member name="M:AppStore.Controllers.AppStoreController.#ctor(AppStoreService.Interfaces.IAppStoreService)">
+            <summary>
+            Конструктор DI
+            </summary>
+        </member>
+        <member name="M:AppStore.Controllers.AppStoreController.GetPlatformsAsync">
+            <summary>
+            Получение всех платформ
+            </summary>
+            <returns>список платформ</returns>
+        </member>
+        <member name="M:AppStore.Controllers.AppStoreController.GetLanguagesAsync">
+            <summary>
+            Получение всех языков
+            </summary>
+            <returns>список языков</returns>
+        </member>
+        <member name="M:AppStore.Controllers.AppStoreController.GetPricesAsync">
+            <summary>
+            Получение всех фиксированных цен
+            </summary>
+            <returns>Список фиксированных цен</returns>
+        </member>
+        <member name="M:AppStore.Controllers.AppStoreController.GetCommentsAsync(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Получение комментариев
+            </summary>
+            <param name="userId">Идентификатр пользователя</param>
+            <param name="appId">Идентификатор приложения</param>
+            <param name="rating">Рейтинг комментариев</param>
+            <param name="orderBy">Сортировать по: </param>
+            <returns>Список комментариев</returns>
+        </member>
+        <member name="M:AppStore.Controllers.AppStoreController.GetAppListAsync(Common.Models.GetAppListParamsModel)">
+            <summary>
+            Список приложений
+            </summary>
+            <param name="parameters">Модель с параметрами метода</param>
+            <returns></returns>
+        </member>
+        <member name="M:AppStore.Controllers.AppStoreController.AddCommentAsync(Common.Models.CommentModel)">
+            <summary>
+            Добавление комментария
+            </summary>
+            <param name="comment">Комментарий</param>
+            <returns></returns>
+        </member>
+        <member name="M:AppStore.Controllers.AppStoreController.EditCommentAsync(Common.Models.CommentModel)">
+            <summary>
+            Редактирование комментария
+            </summary>
+            <param name="comment">Комментарий</param>
+            <returns></returns>
+        </member>
+        <member name="M:AppStore.Controllers.AppStoreController.DeleteCommentAsync(System.Int32)">
+            <summary>
+            Удаление комментария
+            </summary>
+            <param name="commentId">Комментарий</param>
+            <returns></returns>
+        </member>
+        <member name="M:AppStore.Controllers.AppStoreController.GetCompaniesAsync">
+            <summary>
+            Получение компании
+            </summary>
+            <returns>Модель компании</returns>
+        </member>
+        <member name="M:AppStore.Controllers.AppStoreController.GetGenresAsync">
+            <summary>
+            Получение всех жанров
+            </summary>
+            <returns>Модель жанра</returns>
+        </member>
+        <member name="M:AppStore.Controllers.AppStoreController.GetCategoriesAsync">
+            <summary>
+            Получение всех категорий
+            </summary>
+            <returns>Модель категории</returns>
+        </member>
+        <member name="M:AppStore.Controllers.AppStoreController.GetCardInformationAsync(System.Int32)">
+            <summary>
+            Получение информации для карточек по cardTag
+            </summary>
+            <param name="cardTag">Тэг карточки, обозначающий в каком разделе она находится</param>
+            <returns>Модель карточки</returns>
+        </member>
+        <member name="M:AppStore.Controllers.AppStoreController.GetUserInformationAsync(System.Int32)">
+            <summary>
+            Получение информации одного пользователя
+            </summary>
+            <param name="userId">Идентификатор пользователя</param>
+            <returns>Модель пользователя</returns>
+        </member>
+        <member name="M:AppStore.Controllers.AppStoreController.GetApp(System.Int32)">
+            <summary>
+            Получение информации о приложении по идентификатору
+            </summary>
+            <param name="appId">Идентификатор приложения</param>
+            <returns>Модель приложения</returns>
+        </member>
+        <member name="M:AppStore.Controllers.AppStoreController.BuyAppsAsync(System.Collections.Generic.List{System.Int32},System.Int32)">
+            <summary>
+            Приобритение списка приложений для аккаунта
+            </summary>
+            <param name="appIds">Список выбранных приложений</param>
+            <param name="userId">Идентификатор пользователя</param>
+            <returns>Статус и сообщение</returns>
+        </member>
+        <member name="M:AppStore.Controllers.AppStoreController.GetUserLibraryAsync(System.Int32)">
+            <summary>
+            Получение списка приложений из библиотеки пользователя
+            </summary>
+            <param name="userId">Идентификатор пользователя</param>
+            <returns>Статус и сообщение</returns>
+        </member>
+        <member name="M:AppStore.Controllers.AppStoreController.DownloadApp(System.Int32)">
+            <summary>
+            Скачивание приложения
+            </summary>
+            <param name="appId">Идентификатор приложения</param>
+            <returns>Массив байтов</returns>
+        </member>
+        <member name="T:AppStore.Controllers.AuthController">
+            <summary>
+            Контроллер для авторизации
+            </summary>
+        </member>
+        <member name="M:AppStore.Controllers.AuthController.#ctor(AppStoreService.Interfaces.IAuthService)">
+            <summary>
+            Конструктор DI
+            </summary>
+            <param name="authService"></param>
+        </member>
+        <member name="M:AppStore.Controllers.AuthController.Login(Common.Models.LoginModel)">
+            <summary>
+            Авторизация пользователя
+            </summary>
+            <param name="loginModel">Модель авторизации</param>
+            <returns>JWT Token</returns>
+        </member>
+        <member name="M:AppStore.Controllers.AuthController.Register(Common.Models.RegistrationModel)">
+            <summary>
+            Регистрация нового пользователя
+            </summary>
+            <param name="newUser">Модель пользователя</param>
+            <returns>Создан/не создан</returns>
+        </member>
+    </members>
+</doc>
